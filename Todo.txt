@@ -1,0 +1,35 @@
+Problem Statement
+
+1. Design an Automated Teller Mahcine
+2. Storing username and password
+3. Account creation, where user can store money
+4. User can withdraw and deposit money, view earlier transactions, calculate interest
+
+idDate, id, password, account, money, log, date(time)
+->IdAndAccount, id, password, account, money, log
+1. Sign up and Creating account
+insert (id, password, accountName, 0, "Created " + accountName, date(time) )
+
+2. Show Log
+SELECT  Date(time), accountName, Log from TABLE where id, password, accountName
+
+3. deposit money
+select money from Table where id, password, accountName, date(time)=recent
+insert (id, password, accountName, money, log, date(time))
+
+SELECT DISTINCT
+  home,
+  id,
+  datetime AS dt,
+  player,
+  resource
+FROM TopTen t1
+WHERE `datetime` = (SELECT
+  MAX(t2.datetime)
+FROM TopTen t2
+GROUP BY home)
+GROUP BY `datetime`
+ORDER BY `datetime` DESC
+
+1. Show all userID and Password
+Users.showUserAndPassWords
